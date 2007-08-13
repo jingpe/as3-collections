@@ -37,7 +37,7 @@ package com.as3collections.queues
 		
 		public function clear():void
 		{
-			while ( queue.length > 0 )
+			while ( !isEmpty  )
 				queue.pop();
 		}
 		
@@ -48,7 +48,7 @@ package com.as3collections.queues
 		
 		public function toString():String
 		{
-			return queue.join( "," );
+			return queue.toString();
 		}
 		
 		public function toArray():Array

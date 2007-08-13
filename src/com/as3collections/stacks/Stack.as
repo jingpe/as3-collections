@@ -56,7 +56,7 @@ package com.as3collections.stacks
 		
 		public function toString():String
 		{
-			return stack.join( "," );
+			return stack.toString();
 		}
 		
 		public function toArray():Array
