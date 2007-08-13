@@ -3,10 +3,16 @@ package com.as3collections.stacks
 	import com.as3collections.core.IIterator;
 	import com.as3collections.core.IVisitor;
 	import com.as3collections.iterators.ArrayIterator;
+	import com.as3collections.iterators.StackIterator;
 
+	/**
+	 * A last in first out (lifo) data structure. A basic implementation of IStack using an Actionscript Array.
+	 * 
+	 * @author Michael Avila
+	 */
 	public class Stack implements IStack
 	{
-		private var stack:Array;
+		protected var stack:Array;
 		
 		public function get top():Object {  return stack[0];  }
 		public function get count():uint {	return stack.length;  }
@@ -45,7 +51,7 @@ package com.as3collections.stacks
 		
 		public function getIterator():IIterator
 		{
-			return new ArrayIterator( stack );
+			return new StackIterator( this );
 		}
 		
 		public function toString():String
@@ -53,5 +59,9 @@ package com.as3collections.stacks
 			return stack.join( "," );
 		}
 		
+		public function toArray():Array
+		{
+			return stack.slice(0);
+		}
 	}
 }
