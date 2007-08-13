@@ -12,7 +12,6 @@ package com.as3collections.queues
 		public function get count():uint {	return queue.length;  }
 		public function get isEmpty():Boolean {	return count == 0; }
 		
-		
 		public function Queue()
 		{
 			queue = new Array();
@@ -52,5 +51,9 @@ package com.as3collections.queues
 			return queue.join( "," );
 		}
 		
+		public function toArray():Array
+		{
+			return queue.slice(0);
+		}
 	}
 }
