@@ -5,33 +5,20 @@ package com.as3collections.collections
 	import com.as3collections.core.IVisitor;
 	import com.as3collections.iterators.ArrayIterator;
 
-	/**
-	 * An ArrayCollection is essentially just an Actionscript Array that follows the
-	 * semantics of ICollection.
-	 * 
-	 * @author Michael Avila
-	 */
-	public dynamic class ArrayCollection extends Array implements ICollection
+	public dynamic class ArrayCollection implements ICollection
 	{
-		public function get count():uint
-		{
-			return length;
-		}
+		private var _array:Array;
+		public function get array():Array { return _array; }
 		
-		public function get isEmpty():Boolean
-		{
-			return count == 0;
-		}
+		public function get count():uint { return array.length; }
+		public function get isEmpty():Boolean { return count == 0; }
 		
-		/**
-		 * Creates a new ArrayCollection.
-		 * 
-		 * @param Array the source collection of items this collection is initiated with.
-		 */
-		public function ArrayCollection( source:Array=null ):void
+		public function ArrayCollection( array:Array=null ):void
 		{
-			while ( source.length )
-				unshift( source.pop() );
+			if ( array )
+				_array = array;
+			else
+				_array = new Array();
 		}
 		
 		public function accept(visitor:IVisitor):void
@@ -44,13 +31,17 @@ package com.as3collections.collections
 		public function clear():void
 		{
 			while ( length > 0 )
-				pop();
+				array.pop();
 		}
 		
 		public function getIterator():IIterator
 		{
-			return new ArrayIterator( splice(0) );
+			return new ArrayIterator( array.splice(0) );
 		}
 		
+		public function toString():String
+		{
+			return array.toString();
+		}
 	}
 }
