@@ -5,7 +5,7 @@ package com.as3collections.collections
 	import com.as3collections.core.IVisitor;
 	import com.as3collections.iterators.ArrayIterator;
 
-	public dynamic class ArrayCollection implements ICollection
+	public class ArrayCollection implements ICollection
 	{
 		private var _array:Array;
 		public function get array():Array { return _array; }
