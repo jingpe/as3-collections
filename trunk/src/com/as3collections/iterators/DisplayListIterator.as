@@ -2,15 +2,15 @@ package com.as3collections.iterators
 {
 	import com.as3collections.core.IIterator;
 	import flash.display.DisplayObjectContainer;
-	import com.as3collections.queues.Queue;
+	import com.as3collections.queues.ArrayQueue;
 
 	public class DisplayListIterator implements IIterator
 	{
-		private var queue:Queue;
+		private var queue:ArrayQueue;
 		
 		public function DisplayListIterator( owner:DisplayObjectContainer )
 		{
-			queue = new Queue();
+			queue = new ArrayQueue();
 			
 			var index:int = 0;
 			while ( index < owner.numChildren )
