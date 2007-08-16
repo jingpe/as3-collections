@@ -56,7 +56,7 @@ package com.as3collections.collections
 		 */
 		public function getIterator():IIterator
 		{
-			return new ArrayIterator( array.splice(0) );
+			return new ArrayIterator( array.slice(0) );
 		}
 		
 		public function toString():String
