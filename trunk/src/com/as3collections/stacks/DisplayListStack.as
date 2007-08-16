@@ -14,11 +14,17 @@ package com.as3collections.stacks
 		
 		public function DisplayListStack( container:DisplayObjectContainer=null )
 		{
+			if ( !container )
+				container = new Sprite();
+				
 			super( container );
 		}
 		
 		public function push(object:Object):void
 		{
+			if ( !(enqueue is DisplayObject ) )
+				throw new ArgumentError( "Require an object of type DisplayObject." );
+				
 			container.addChild( object as DisplayObject );
 		}
 		

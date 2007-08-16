@@ -17,10 +17,7 @@ package com.as3collections.collections
 		
 		public function DisplayListCollection( container:DisplayObjectContainer=null )
 		{
-			if ( container )
-				_container = container;
-			else
-				_container = new Sprite();
+			_container = container;
 		}
 		
 		public function accept(visitor:IVisitor):void

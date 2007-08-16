@@ -12,6 +12,9 @@ package com.as3collections.stacks
 		
 		public function ArrayStack( array:Array=null )
 		{
+			if ( !array )
+				array = new Array();
+			
 			super( array );
 		}
 		

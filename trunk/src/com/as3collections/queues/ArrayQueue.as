@@ -12,6 +12,9 @@ package com.as3collections.queues
 		
 		public function ArrayQueue( array:Array=null )
 		{
+			if ( !array )
+				array = new Array();
+				
 			super( array );
 		}
 		
