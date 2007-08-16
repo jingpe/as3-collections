@@ -22,7 +22,7 @@ package com.as3collections.stacks
 		
 		public function push(object:Object):void
 		{
-			if ( !(enqueue is DisplayObject ) )
+			if ( !(object is DisplayObject ) )
 				throw new ArgumentError( "Require an object of type DisplayObject." );
 				
 			container.addChild( object as DisplayObject );

@@ -1,11 +1,10 @@
 package com.as3collections.queues
 {
 	import com.as3collections.collections.DisplayListCollection;
-	import com.as3collections.core.IIterator;
-	import com.as3collections.core.IVisitor;
-	import flash.display.DisplayObjectContainer;
+	
 	import flash.display.DisplayObject;
-	import flash.errors.IllegalOperationError;
+	import flash.display.DisplayObjectContainer;
+	import flash.display.Sprite;
 
 	public class DisplayListQueue extends DisplayListCollection implements IQueue
 	{
@@ -21,7 +20,7 @@ package com.as3collections.queues
 
 		public function enqueue(object:Object):void
 		{
-			if ( !(enqueue is DisplayObject ) )
+			if ( !(object is DisplayObject ) )
 				throw new ArgumentError( "Require an object of type DisplayObject." );
 				
 			container.addChild( object as DisplayObject );

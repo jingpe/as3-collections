@@ -1,8 +1,7 @@
 package com.as3collections.core
 {
 	/**
-	 * Our definition of a collection of objects.  If something is a collection of items, we should be able to count those
-	 * items, know if it is empty, remove all of the items, iterate over all of the items, and also pass a visitor over the items in the collection.
+	 * Definition of what it means for an object to represent a collection of objects.
 	 * 
 	 * @author Michael Avila
 	 */
