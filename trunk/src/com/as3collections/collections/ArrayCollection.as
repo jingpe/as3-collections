@@ -1,23 +1,40 @@
 package com.as3collections.collections
 {
-	import com.as3collections.core.IIterator;
 	import com.as3collections.core.ICollection;
+	import com.as3collections.core.IIterator;
 	import com.as3collections.core.IVisitor;
 	import com.as3collections.iterators.ArrayIterator;
+	import flash.utils.getQualifiedClassName;
 
+	/**
+	 * A wrapper for the Array which allows them to be used as ICollections.
+	 * 
+	 * @author Michael Avila
+	 */
 	public class ArrayCollection implements ICollection
 	{
 		private var _array:Array;
+		/**
+		 * The array this wrapper is wrapping.
+		 */
 		public function get array():Array { return _array; }
 		
 		public function get count():uint { return array.length; }
 		public function get isEmpty():Boolean { return count == 0; }
 		
+		/**
+		 * Creates a new ArrayCollection wrapper for the array specified.
+		 * 
+		 * @param Array is the Array this ArrayCollection wrapper is wrapping.
+		 */
 		public function ArrayCollection( array:Array ):void
 		{
 			_array = array;
 		}
 		
+		/**
+		 * Passes a visitor object each item in the collection using the wrappers iterator.
+		 */
 		public function accept(visitor:IVisitor):void
 		{
 			var iterator:IIterator = getIterator();
@@ -25,12 +42,18 @@ package com.as3collections.collections
 				visitor.visit( iterator.next() );
 		}
 		
+		/**
+		 * Removes all of the items from the collection this wrapper is wrapping.
+		 */
 		public function clear():void
 		{
 			while ( length > 0 )
 				array.pop();
 		}
 		
+		/**
+		 * Returns an IIterator which traverses the items in the collection starting at index 0, and going to index length-1.
+		 */
 		public function getIterator():IIterator
 		{
 			return new ArrayIterator( array.splice(0) );
@@ -38,7 +61,8 @@ package com.as3collections.collections
 		
 		public function toString():String
 		{
-			return array.toString();
+			var className:String = getQualifiedClassName( this );
+			return "[" + className.slice( className.lastIndexOf( ":" ) + 1, className.length )  + " " + array.toString() + " ]";
 		}
 	}
 }
