@@ -13,12 +13,9 @@ package com.as3collections.collections
 		public function get count():uint { return array.length; }
 		public function get isEmpty():Boolean { return count == 0; }
 		
-		public function ArrayCollection( array:Array=null ):void
+		public function ArrayCollection( array:Array ):void
 		{
-			if ( array )
-				_array = array;
-			else
-				_array = new Array();
+			_array = array;
 		}
 		
 		public function accept(visitor:IVisitor):void
