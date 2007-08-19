@@ -1,5 +1,8 @@
 package com.as3collections.collections
 {
+	import com.as3collections.iterators.IIterator;
+	import com.as3collections.visitors.IVisitor;
+	
 	/**
 	 * Definition of what it means for an object to represent a collection of objects.
 	 * 

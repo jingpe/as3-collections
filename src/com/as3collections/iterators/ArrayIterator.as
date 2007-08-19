@@ -1,7 +1,5 @@
 package com.as3collections.iterators
 {
-	import com.as3collections.core.IIterator;
-
 	/**
 	 * An array iterator is used to traverse an array of items.
 	 * 

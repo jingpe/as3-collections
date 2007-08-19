@@ -3,11 +3,16 @@ package com.as3collections.trees
 	import com.as3collections.collections.ArrayCollection;
 	import com.as3collections.queues.ArrayQueue;
 	import com.as3collections.queues.IQueue;
+	import com.as3collections.visitors.IVisitor;
+	import com.as3collections.visitors.IPrePostVisitor;
+	import flash.utils.getQualifiedClassName;
 
 	public class ArrayTree extends ArrayCollection implements ITree
 	{
 		private var _key:Object;
 		public function get key():Object { return _key; }
+		
+		public override function get isEmpty():Boolean { return key == null; }
 		
 		public function get isLeaf():Boolean { return !(key is ITree); }
 		public function get children():uint { return array.length; }
@@ -52,7 +57,8 @@ package com.as3collections.trees
 				for ( var i:int=0; i<head.children; i++ )
 				{
 					var tree:ITree = head.getChildTree( i );
-					queue.enqueue( tree );
+					if ( !tree.isEmpty )
+						queue.enqueue( tree );
 				}
 			}
 		}
@@ -62,9 +68,15 @@ package com.as3collections.trees
 			if ( visitor.isDone )
 				return;
 			
-			visitor.visit( key );
-			for ( var i:int=0; i<children; i++ )
-				getChildTree( i ).depthFirstTraversal( visitor );
+			if ( !isEmpty )
+			{
+				visitor.preVisit( key );
+			
+				for ( var i:int=0; i<children; i++ )
+					getChildTree( i ).depthFirstTraversal( visitor );
+				
+				visitor.postVisit( key );
+			}
 		}
 
 		public override function toString():String

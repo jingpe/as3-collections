@@ -1,6 +1,8 @@
 package com.as3collections.trees
 {
 	import com.as3collections.collections.ICollection;
+	import com.as3collections.visitors.IVisitor;
+	import com.as3collections.visitors.IPrePostVisitor;
 	
 	public interface ITree extends ICollection
 	{
