@@ -1,12 +1,12 @@
 package com.as3collections.stacks
 {
-	import com.as3collections.core.IIterator;
-	import com.as3collections.core.IVisitor;
+	import com.as3collections.collections.DisplayListCollection;
+	import com.as3collections.iterators.IIterator;
+	import com.as3collections.iterators.StackIterator;
+	
+	import flash.display.DisplayObject;
 	import flash.display.DisplayObjectContainer;
 	import flash.display.Sprite;
-	import com.as3collections.iterators.StackIterator;
-	import com.as3collections.collections.DisplayListCollection;
-	import flash.display.DisplayObject;
 
 	public class DisplayListStack extends DisplayListCollection implements IStack
 	{

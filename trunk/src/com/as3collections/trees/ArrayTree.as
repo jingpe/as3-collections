@@ -19,14 +19,10 @@ package com.as3collections.trees
 		public function get isLeaf():Boolean { return !(key is ITree); }
 		public function get children():uint { return array.length; }
 		
-		public function ArrayTree( key:Object, array:Array=null )
+		public function ArrayTree( key:Object )
 		{
-			_key = key;
-			
-			if ( !array )
-				array = new Array();
-				
-			super( array );
+			_key = key;		
+			super(  new Array() );
 		}
 		
 		public override function accept( visitor:IVisitor ):void

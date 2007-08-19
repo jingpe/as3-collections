@@ -1,8 +1,7 @@
 package com.as3collections.iterators
 {
-	import com.as3collections.core.IIterator;
-	import flash.display.DisplayObjectContainer;
 	import com.as3collections.queues.ArrayQueue;
+	import flash.display.DisplayObjectContainer;
 
 	public class DisplayListIterator implements IIterator
 	{
