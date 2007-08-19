@@ -1,6 +1,6 @@
 package com.as3collections.queues
 {
-	import com.as3collections.core.ICollection;
+	import com.as3collections.collections.ICollection;
 
 	/**
 	 * Defines the queue data structure.  A queue is a specific kind of collection where

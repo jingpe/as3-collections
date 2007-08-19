@@ -1,9 +1,8 @@
 package com.as3collections.collections
 {
-	import com.as3collections.core.ICollection;
-	import com.as3collections.core.IIterator;
-	import com.as3collections.core.IVisitor;
 	import com.as3collections.iterators.ArrayIterator;
+	import com.as3collections.iterators.IIterator;
+	import com.as3collections.visitors.IVisitor;
 	import flash.utils.getQualifiedClassName;
 
 	/**
