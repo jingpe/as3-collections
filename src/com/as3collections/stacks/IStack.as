@@ -1,6 +1,6 @@
 package com.as3collections.stacks
 {
-	import com.as3collections.core.ICollection;
+	import com.as3collections.collections.ICollection;
 
 	/**
 	 * Defines the stack data structure.  A stack is a specific kind of collection where

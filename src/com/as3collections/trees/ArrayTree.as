@@ -6,6 +6,8 @@ package com.as3collections.trees
 	import com.as3collections.visitors.IVisitor;
 	import com.as3collections.visitors.IPrePostVisitor;
 	import flash.utils.getQualifiedClassName;
+	import com.as3collections.iterators.IIterator;
+	import com.as3collections.iterators.TreeIterator;
 
 	public class ArrayTree extends ArrayCollection implements ITree
 	{
@@ -27,6 +29,11 @@ package com.as3collections.trees
 			super( array );
 		}
 		
+		public override function accept( visitor:IVisitor ):void
+		{
+			breadthFirstTraversal( visitor );
+		}
+		
 		public function getChildTree( index:int ):ITree
 		{
 			return array[ index ];
@@ -40,6 +47,11 @@ package com.as3collections.trees
 		public function removeChildTree( tree:ArrayTree ):ArrayTree
 		{
 			return array.splice( array.indexOf( tree ), 1 )[0];
+		}
+		
+		public override function getIterator():IIterator
+		{
+			return new TreeIterator( this );
 		}
 		
 		public function breadthFirstTraversal( visitor:IVisitor ):void

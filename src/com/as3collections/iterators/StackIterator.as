@@ -1,6 +1,6 @@
 package com.as3collections.iterators
 {
-	import com.as3collections.core.IIterator;
+	import com.as3collections.iterators.IIterator;
 	import com.as3collections.stacks.IStack;
 	import com.as3collections.queues.ArrayQueue;
 

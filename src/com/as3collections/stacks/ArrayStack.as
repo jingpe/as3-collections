@@ -1,7 +1,7 @@
 package com.as3collections.stacks
 {
 	import com.as3collections.collections.ArrayCollection;
-	import com.as3collections.core.IIterator;
+	import com.as3collections.iterators.IIterator;
 	import com.as3collections.iterators.StackIterator;
 
 	/**
