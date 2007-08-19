@@ -1,11 +1,10 @@
 package com.as3collections.collections
 {
-	import com.as3collections.core.IIterator;
-	import com.as3collections.core.ICollection;
-	import com.as3collections.core.IVisitor;
-	import flash.display.DisplayObjectContainer;
-	import flash.display.Sprite;
 	import com.as3collections.iterators.DisplayListIterator;
+	import com.as3collections.iterators.IIterator;
+	import com.as3collections.visitors.IVisitor;
+	
+	import flash.display.DisplayObjectContainer;
 
 	public class DisplayListCollection implements ICollection
 	{
